@@ -44,10 +44,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_15_015030) do
   end
 
   create_table "feedbacks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "feedback_type"
+    t.string "feedback_type", default: "review"
     t.uuid "user_id"
     t.text "content"
-    t.string "rating"
+    t.string "rating", default: "no_rating"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

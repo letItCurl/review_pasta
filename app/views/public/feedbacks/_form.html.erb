@@ -1,10 +1,6 @@
 <%= form_with(model: feedback, url: public_feedbacks_path, class: "contents") do |form| %>
   <%= render "devise/shared/error_messages", resource: feedback %>
   <div class="my-5">
-    <%= form.label :feedback_type %>
-    <%= form.select :feedback_type, options_for_select(Feedback.feedback_types), {}, { class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" } %>
-  </div>
-  <div class="my-5">
     <%= form.label :content %>
     <%= form.text_area :content, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
