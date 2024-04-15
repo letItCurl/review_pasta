@@ -1,8 +1,7 @@
 <tr id="<%= dom_id product %>">
-  <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Lindsay Walton</td>
-  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Front-end Developer</td>
-  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">lindsay.walton@example.com</td>
-  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Member</td>
+  <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6"><%= product.name.truncate(37) %></td>
+  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= product.feedbacks.count %></td>
+  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= public_product_url(product) %></td>
   <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
     <%= link_to "Edit", edit_product_path(product), class: "text-indigo-600 hover:text-indigo-900" %>
   </td>

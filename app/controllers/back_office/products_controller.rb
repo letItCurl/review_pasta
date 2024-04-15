@@ -12,7 +12,16 @@ class BackOffice::ProductsController < BackOfficeController
 
   # GET /products/new
   def new
-    @product = Product.new
+    if current_user.products.count == 0
+      @product = Product.new({
+        name: "Million Dollar Weekend: The Surprisingly Simple Way to Launch a 7-Figure Business in 48 Hours",
+        incentive_description: "Get my special lead generation funnel for free 🎯",
+        thank_you_title: "Thank you for your feedback!",
+        thank_you_content: "Here is the link to the ebook: https://example.com"
+      })
+    else
+      @product = Product.new
+    end
   end
 
   # GET /products/1/edit

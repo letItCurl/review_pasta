@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   end
 
   scope module: :back_office do
-    get "dashboard/index"
     resources :feedbacks, only: [ :new, :create ]
     resources :products, only: [ :index, :new, :create, :edit, :update ] do
       member do
