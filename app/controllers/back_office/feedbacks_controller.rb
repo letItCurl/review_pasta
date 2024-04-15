@@ -1,4 +1,11 @@
 class BackOffice::FeedbacksController < BackOfficeController
+  def index
+  end
+
+  def show
+    @feedback = current_user.products.where(id: params[:id]).first.feedbacks.find(params[:feedback_id])
+  end
+
   # GET /feedbacks/new
   def new
     @feedback = Feedback.new

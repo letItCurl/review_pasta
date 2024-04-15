@@ -1,5 +1,9 @@
 <div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">New feedback</h1>
+  <div class="space-y-3">
+    <h1 class="font-bold text-4xl">New feedback</h1>
+    <p class="text-gray-500">Your feedback is really important to us, let us know how we can provide a better product for you 🐈</p>
+  </div>
+  <hr class="my-6">
   <%= render "form", feedback: @feedback %>
   <%= link_to "Back to dashboard", authenticated_root_path, class: "ml-3 text-sm font-semibold leading-6 text-gray-900" %>
 </div>

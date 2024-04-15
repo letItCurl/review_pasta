@@ -1,0 +1,8 @@
+<div class="mx-auto md:w-2/3 w-full">
+  <div class="space-y-3">
+    <h1 class="font-bold text-4xl">Give your feedback about "<%= @feedback.product.name %>"</h1>
+    <p class=""><%= @feedback.product.incentive_description %></p>
+  </div>
+  <hr class="my-6">
+  <%= render "form", feedback: @feedback %>
+</div>

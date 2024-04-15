@@ -9,15 +9,27 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
+  namespace :public do
+    resources :products, only: [ :show ] do
+      member do
+        resources :feedbacks, only: [ :create, :new ]
+      end
+    end
+  end
 
   scope module: :back_office do
     get "dashboard/index"
-    resources :feedbacks, only: [ :create, :new ]
+    resources :feedbacks, only: [ :new, :create ]
+    resources :products, only: [ :index, :new, :create, :edit, :update ] do
+      member do
+        resources :feedbacks, only: [ :show ], param: :feedback_id
+      end
+    end
   end
 
   devise_scope :user do
     authenticated do
-      root to: "back_office/dashboard#index", as: :authenticated_root
+      root to: "back_office/products#index", as: :authenticated_root
     end
 
     unauthenticated do
