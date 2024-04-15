@@ -12,7 +12,7 @@ class Product < ApplicationRecord
   private
 
   def max_free_products
-    if self.user.products > 2
+    if self.user.products.count > 2
       self.errors.add(:base, "You don't have any more credits available.")
     end
   end

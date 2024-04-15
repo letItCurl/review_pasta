@@ -16,7 +16,7 @@ class Feedback < ApplicationRecord
   private
 
   def max_free_feedbacks
-    if self.product.feedbacks > Feedback::MAX_FREE_FEEDBACKS
+    if self.product.feedbacks.count > Feedback::MAX_FREE_FEEDBACKS
       self.errors.add(:base, "You don't have any more credits available.")
     end
   end
