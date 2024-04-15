@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :back_office do
-    get 'dashboard/index'
-  end
   get "home/index"
   devise_for :users
 
@@ -14,12 +11,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
 
   scope module: :back_office do
-
+    get "dashboard/index"
+    resources :feedbacks, only: [ :create, :new ]
   end
 
   devise_scope :user do
     authenticated do
-      #root to: "back_office/dashboard#index", as: :authenticated_root
+      root to: "back_office/dashboard#index", as: :authenticated_root
     end
 
     unauthenticated do

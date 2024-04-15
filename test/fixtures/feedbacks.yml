@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  feedback_type: MyString
+  user: one
+  content: MyText
+  rating: 1
+
+two:
+  feedback_type: MyString
+  user: two
+  content: MyText
+  rating: 1

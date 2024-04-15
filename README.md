@@ -1,8 +1,5 @@
 # Rapid Rails
 
-- [ ] Feedback
-- [ ] Headline in sign-up system
-
 - [ ] Client generator
 - [ ] Email connections
 - [ ] Email lettercatcher
@@ -11,3 +8,4 @@
 - [ ] Backoffice dashboard
 - [ ] Modify generators
 - [ ] Devise Template Improve
+- [ ] Check RDBSM + Validation + Test

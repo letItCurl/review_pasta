@@ -1,19 +1,19 @@
-<%= render 'devise/shared/headline' do %>
+<%= render 'devise/shared/headline_layout' do %>
   <div class="flex flex-col items-center space-y-3">
     <h2 class="text-3xl">Log in</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="space-y-3">
         <div class="field">
           <%= f.label :email, class: "block text-sm font-medium leading-6 text-gray-900" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+          <%= f.email_field :email, autofocus: true, class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
         </div>
         <div class="field">
           <%= f.label :password, class: "block text-sm font-medium leading-6 text-gray-900" %><br />
-          <%= f.password_field :password, autocomplete: "current-password", class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+          <%= f.password_field :password, class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
         </div>
         <% if devise_mapping.rememberable? %>
-          <div class="field">
-            <%= f.check_box :remember_me %>
+          <div class="field flex items-center">
+            <%= f.check_box :remember_me, class: "focus:ring-1 focus:ring-inset focus:ring-indigo-600 border-0 ring-1 ring-inset ring-gray-300 rounded-md mr-3 shadow-sm" %>
             <%= f.label :remember_me, class: "block text-sm font-medium leading-6 text-gray-900" %>
           </div>
         <% end %>
