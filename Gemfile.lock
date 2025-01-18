@@ -259,6 +259,8 @@ GEM
     tailwindcss-rails (2.4.0-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.3.1)
+    thruster (0.1.10-x86_64-darwin)
+    thruster (0.1.10-x86_64-linux)
     timeout (0.4.1)
     turbo-rails (2.0.5)
       actionpack (>= 6.0.0)
@@ -305,6 +307,7 @@ DEPENDENCIES
   sprockets-rails
   stimulus-rails
   tailwindcss-rails
+  thruster
   turbo-rails
   tzinfo-data
   web-console
