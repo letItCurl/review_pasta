@@ -77,8 +77,12 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+
 production:
-  <<: *default
-  database: review_pasta_production
-  username: review_pasta
-  password: <%= ENV["REVIEW_PASTA_DATABASE_PASSWORD"] %>
+  primary: &primary_production
+    <<: *default
+    database: review_pasta_production
+    username: <%= ENV["POSTGRES_USER"] %>
+    password: <%= ENV["POSTGRES_PASSWORD"] %>
+    host: <%= ENV["DB_HOST"] %>
+    port: <%= ENV["DB_PORT"] %>
